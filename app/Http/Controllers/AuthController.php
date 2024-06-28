@@ -17,7 +17,7 @@ class AuthController extends Controller
 
         $user = User::create($validated);
 
-        return response()->json(['message' => 'User registered successfully', 'token' => $token], 201);
+        return response()->json(['message' => 'User registered successfully'], 201);
     }
 
     public function login(LoginRequest $request)
