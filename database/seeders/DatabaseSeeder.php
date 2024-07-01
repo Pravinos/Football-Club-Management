@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ClubSeeder::class,
             UserSeeder::class,
+            PlayersSeeder::class,
         ]);
 
         // Create admin user
