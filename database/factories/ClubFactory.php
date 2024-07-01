@@ -21,7 +21,6 @@ class ClubFactory extends Factory
             'country' => $this->faker->country,
             'founded_year' => $this->faker->year,
             'stadium' => $this->faker->word . ' Stadium',
-            'manager_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

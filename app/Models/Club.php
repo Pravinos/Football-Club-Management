@@ -10,7 +10,10 @@ class Club extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'country', 'founded_year', 'stadium', 'manager_id'
+        'name',
+        'country',
+        'founded_year',
+        'stadium'
     ];
 
     public function manager()

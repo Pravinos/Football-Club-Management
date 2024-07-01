@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('country');
             $table->integer('founded_year');
             $table->string('stadium');
-            $table->integer('manager_id');
             $table->timestamps();
         });
     }

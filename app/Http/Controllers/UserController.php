@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return User::all();
+        return response()->json(User::all(), 200);
     }
 
     public function store(Request $request)
@@ -20,7 +20,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
-            'role' => ['required', Rule::in(['admin', 'coach', 'player'])],
+            'role' => ['required', Rule::in(['admin', 'manager', 'scouter', 'coach', 'player'])],
         ]);
 
         $user = User::create([
@@ -30,18 +30,16 @@ class UserController extends Controller
             'role' => $validated['role'],
         ]);
 
-        return response()->json($user, 201);
+        return response()->json($user, 200);
     }
 
     public function show(User $user)
     {
-        return User::findOrFail($user);
+        return response()->json($user, 200);
     }
 
     public function update(Request $request, User $user)
     {
-        $user = User::findOrFail($user);
-
         $validated = $request->validate([
             'name' => 'sometimes|required|string|max:255',
             'email' => 'sometimes|required|string|email|max:255|unique:users,email,',
@@ -62,6 +60,6 @@ class UserController extends Controller
     {
         User::destroy($user);
 
-        return response()->json(null, 204);
+        return response()->json('OK', 200);
     }
 }

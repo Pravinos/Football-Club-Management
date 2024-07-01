@@ -25,7 +25,6 @@ class ClubController extends Controller
             'country' => 'required|string|max:255',
             'founded_year' => 'required|integer',
             'stadium' => 'required|string|max:255',
-            'manager_id' => 'required|exists:users,id'
         ]);
 
         $club = Club::create($validated);
@@ -51,7 +50,6 @@ class ClubController extends Controller
             'country' => 'sometimes|required|string|max:255',
             'founded_year' => 'sometimes|required|integer',
             'stadium' => 'sometimes|required|string|max:255',
-            'manager_id' => 'sometimes|required|exists:users,id'
         ]);
 
         $club->update($validated);
