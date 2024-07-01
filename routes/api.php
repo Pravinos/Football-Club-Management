@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\StatisticController;
 
 // Public routes
 Route::post('/register', [AuthController::class, 'register']);
@@ -22,4 +23,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('/users', UserController::class);
     Route::apiResource('/clubs', ClubController::class);
     Route::apiResource('/players', PlayerController::class);
+    Route::apiResource('/players.statistics', StatisticController::class);
+    
 });

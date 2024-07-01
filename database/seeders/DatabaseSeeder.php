@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             ClubSeeder::class,
             UserSeeder::class,
             PlayersSeeder::class,
+            StatisticsSeeder::class,
         ]);
 
         // Create admin user

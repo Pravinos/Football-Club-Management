@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Club;
+use App\Models\Statistic;
 
 class Player extends Model
 {
@@ -29,6 +31,11 @@ class Player extends Model
     public function club()
     {
         return $this->belongsTo(Club::class);
+    }
+
+    public function statistic()
+    {
+        return $this->hasOne(statistic::class);
     }
 }
 
